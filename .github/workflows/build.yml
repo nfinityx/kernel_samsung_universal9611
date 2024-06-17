@@ -33,11 +33,7 @@ jobs:
       - name: Run build 
         run: |
           export DEVICE=${{matrix.device}}
-          if [[ "${{ matrix.rom }}" == "oneui" ]]; then
-            DEVICE=${{matrix.device}} ROM=${{matrix.rom}} KSU=${{matrix.ksu}} SELINUX=p bash build_kernel.sh
-          elif [[ "${{ matrix.rom }}" == "aosp" ]]; then
-            DEVICE=${{matrix.device}} ROM=${{matrix.rom}} KSU=${{matrix.ksu}} SELINUX=e bash build_kernel.sh
-          fi
+          DEVICE=${{matrix.device}} ROM=${{matrix.rom}} KSU=${{matrix.ksu}} SELINUX=e bash build_kernel.sh
           
       - name: Upload kernel
         uses: actions/upload-artifact@v4
