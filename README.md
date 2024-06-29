@@ -48,16 +48,16 @@ $ bash <(curl https://gist.githubusercontent.com/roynatech2544/0feeeb35a6d1782b1
 
 # If you want to compile the kernel not for A51 then export DEVICE variable to m21, m31, m31s, f41
 # Build the kernel
-$ ./build_kernel.sh aosp # (for AOSP)
-$ ./build_kernel.sh oneui # (for OneUI)
-$ DEVICE=m21 ./build_kernel.sh aosp # (for M21, AOSP)
+$ ROM=aosp ./build_kernel.sh # (for AOSP)
+$ ROM=oneui ./build_kernel.sh # (for OneUI)
+$ DEVICE=m21 KSU=1 ROM=aosp ./build_kernel.sh # (for M21, AOSP and ksu)
 ```
 
 After build the image of the kernel will be in out/arch/arm64/boot/Image
 
 ## How To Flash
 
-After a successful build, you can see the scripts/packaging/Grass*.zip archive.
+After a successful build, you can see the $PWD/kernel_zip/GRASS* archive.
 This is your kernel. Just flash it via TWRP or adb sideload
 
 ## Credits
