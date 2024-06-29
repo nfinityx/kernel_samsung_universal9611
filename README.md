@@ -51,7 +51,15 @@ $ bash <(curl https://gist.githubusercontent.com/roynatech2544/0feeeb35a6d1782b1
 $ ROM=aosp ./build_kernel.sh # (for AOSP)
 $ ROM=oneui ./build_kernel.sh # (for OneUI)
 $ DEVICE=m21 KSU=1 ROM=aosp ./build_kernel.sh # (for M21, AOSP and ksu)
+
+# if you want to overclock or underclock edit these and add it to arch/arm64/configs/vendor/grass.config
+CONFIG_ARM_MODCLOCK=y
+CONFIG_MAX_FREQ_BIG=2314000
+CONFIG_MIN_FREQ_BIG=936000
+CONFIG_MAX_FREQ_LITTLE=1742000
+CONFIG_MIN_FREQ_LITTLE=403000
 ```
+
 
 After build the image of the kernel will be in out/arch/arm64/boot/Image
 
